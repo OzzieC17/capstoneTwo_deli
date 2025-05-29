@@ -1,0 +1,7 @@
+=== Carreons Deli Receipt ===
+
+Medium cola -$2.50
+8"Wrap Sandwich -$7.00
+
+Total: $9.50
+Thank you for shopping!

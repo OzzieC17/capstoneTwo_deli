@@ -1,0 +1,8 @@
+=== Carreons Deli Receipt ===
+
+Chips (Classic) -$1.50
+Small cola -$2.00
+12" Wrap Sandwich -$8.50
+
+Total: $12.00
+Thank you for shopping!

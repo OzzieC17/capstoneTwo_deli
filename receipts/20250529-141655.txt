@@ -1,0 +1,6 @@
+=== Carreons Deli Receipt ===
+
+Medium cola -$2.50
+
+Total: $2.50
+Thank you for shopping!

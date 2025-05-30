@@ -1,0 +1,8 @@
+====== Carreons Deli Receipt ======
+
+Chips (Classic) -$1.50
+Medium Cola -$2.50
+4" White Sandwich -$7.25
+
+Total: $11.25
+Thank you for shopping!

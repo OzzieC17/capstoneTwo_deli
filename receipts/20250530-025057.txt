@@ -1,0 +1,7 @@
+====== Carreons Deli Receipt ======
+
+Small Sprite -$2.00
+8" Wrap Sandwich -$8.50
+
+Total: $10.50
+Thank you for shopping!

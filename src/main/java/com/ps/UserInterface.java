@@ -39,7 +39,7 @@ public class UserInterface {
     }
     private void orderMenu() {
         while (true) {
-            System.out.println("== Order Menu ==");
+            System.out.println("====== Order Menu ======");
             System.out.println("1) Add Sandwich");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
@@ -74,7 +74,7 @@ public class UserInterface {
     }
 
     public Sandwich buildSandwich() {
-        System.out.println("=== Build Sandwich ===");
+        System.out.println("====== Build Sandwich ======");
 
         System.out.println("Select bread type:");
         System.out.println("1) White\n2) Wheat\n3) Rye\n4) Wrap");
@@ -166,7 +166,7 @@ public class UserInterface {
     }
 
     private Drink buildDrink() {
-        System.out.println("=== Select Drink ===");
+        System.out.println("====== Select Drink ======");
         System.out.println("Choose a size:");
         System.out.println("1) Small\n2) Medium\n3) Large");
 
@@ -198,7 +198,7 @@ public class UserInterface {
     }
 
     private BagOfChips buildChips() {
-        System.out.println("=== Choose chips ===");
+        System.out.println("====== Choose chips ======");
         String[] chipOptions = {
                 "Classic", "BBQ", "Salt & Vinegar", "Sour cream", "Jalapeno"
         };
@@ -221,7 +221,7 @@ public class UserInterface {
     }
 
     private void checkout() {
-        System.out.println("\n=== Checkout ===");
+        System.out.println("\n====== Checkout ======");
 
         if (currentOrder.getProducts().isEmpty()) {
             System.out.println("No items selected.");

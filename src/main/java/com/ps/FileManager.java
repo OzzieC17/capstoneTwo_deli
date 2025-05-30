@@ -20,7 +20,7 @@ public class FileManager {
             File receiptFile = new File(folder, timestamp + ".txt");
 
             try (FileWriter writer = new FileWriter(receiptFile)) {
-                writer.write("=== Carreons Deli Receipt ===\n\n");
+                writer.write("====== Carreons Deli Receipt ======\n\n");
                 for (Product product : currentOrder.getProducts()) {
                     writer.write(product.getName() + " -$" + product.calcPrice() + "\n");
 

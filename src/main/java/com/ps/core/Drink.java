@@ -2,7 +2,7 @@ package com.ps.core;
 
 import java.math.BigDecimal;
 
-public class Drink implements Product {
+public class Drink extends MenuItem {
     public enum Size { Small, Medium, Large}
 
     private Size size;

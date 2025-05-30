@@ -4,6 +4,7 @@ import com.ps.core.*;
 import com.ps.core.BagOfChips;
 
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -16,7 +17,8 @@ public class UserInterface {
     }
     public void display() {
         while (true) {
-            System.out.println("Welcome to Carreons Deli!");
+            String banner = Banner.create("Welcome to Carreons Deli!");
+            AnsiColors.pulsate(banner, 5, 300);
             System.out.println("1) New Order");
             System.out.println("0) Exit ");
             String input = scanner.nextLine();
@@ -93,23 +95,38 @@ public class UserInterface {
 
         String[] meats = {"Steak", "Ham", "Salami", "Roast Beef", "Chicken", "Bacon"};
         for (String meat : meats) {
-            System.out.printf("Add %s? (n, y, or x for extra): ", meat);
-            String choice = scanner.nextLine().toLowerCase();
-            if (choice.equals("y")) {
-                sandwich.addMeat(new Topping(meat, false, "Meat"));
-
-            } else if (choice.equals("x")) {
-                sandwich.addMeat(new Topping(meat, true, "Meat"));
+            while (true) {
+                System.out.printf("Add %s? (n, y, or x for extra): ", meat);
+                String choice = scanner.nextLine().toLowerCase();
+                if (choice.equals("y")) {
+                    sandwich.addMeat(new Topping(meat, false, "Meat"));
+                    break;
+                } else if (choice.equals("x")) {
+                    sandwich.addMeat(new Topping(meat, true, "Meat"));
+                    break;
+                } else if (choice.equals("n")) {
+                    break;
+                } else {
+                    System.out.println("Invalid, please enter 'y', 'n', or 'x'.");
+                }
             }
         }
         String[] cheeses = {"American", "Provolone", "Cheddar", "Swiss"};
         for (String cheese : cheeses) {
-            System.out.printf("Add %s? (n, y, or x for extra): ", cheese);
-            String choice = scanner.nextLine().toLowerCase();
-            if (choice.equals("y")) {
-                sandwich.addCheese(new Topping(cheese, false, "Cheese"));
-            } else if (choice.equals("x")) {
-                sandwich.addCheese(new Topping(cheese, true, "Cheese"));
+            while (true) {
+                System.out.printf("Add %s? (n, y, or x for extra): ", cheese);
+                String choice = scanner.nextLine().toLowerCase();
+                if (choice.equals("y")) {
+                    sandwich.addCheese(new Topping(cheese, false, "Cheese"));
+                    break;
+                } else if (choice.equals("x")) {
+                    sandwich.addCheese(new Topping(cheese, true, "Cheese"));
+                    break;
+                } else if (choice.equals("n")) {
+                    break;
+                } else {
+                    System.out.println("Invalid, please enter 'y', 'n', or 'x'.");
+                }
             }
         }
         String[] regulars = {"Lettuce", "Peppers", "Onions", "Tomatoes", "Cucumbers", "Guacamole", "Mushrooms"};
@@ -127,9 +144,25 @@ public class UserInterface {
             }
         }
         System.out.println("Your sandwich is ready: " + sandwich.getName());
+        System.out.println("Bread: " + sandwich.getBread());
+        System.out.println("Size: " + sandwich.getSize() + "\"");
+        System.out.println("Toasted: " + (sandwich.isToasted() ? "Yes" : "No"));
+        System.out.println("Meats: " + formatToppingList(sandwich.getMeats()));
+        System.out.println("Cheeses: " + formatToppingList(sandwich.getCheeses()));
+        System.out.println("Regular Toppings: " + formatToppingList(sandwich.getRegularToppings()));
+        System.out.println("Sauces: " + formatToppingList(sandwich.getSauces()));
         System.out.println("Total: $" + sandwich.calcPrice());
         return sandwich;
 
+    }
+    private String formatToppingList(List<Topping> toppings) {
+        if (toppings.isEmpty()) return "None";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < toppings.size(); i++) {
+            sb.append(toppings.get(i).getName());
+            if (i < toppings.size() - 1) sb.append(", ");
+        }
+        return sb.toString();
     }
 
     private Drink buildDrink() {

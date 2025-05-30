@@ -1,0 +1,7 @@
+=== Carreons Deli Receipt ===
+
+4" White Sandwich -$8.25
+12" Wrap Sandwich -$13.75
+
+Total: $22.00
+Thank you for shopping!

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sandwich implements Product {
+public class Sandwich extends MenuItem {
     private String bread;
     private String size;
     private boolean toasted;
@@ -18,7 +18,9 @@ public class Sandwich implements Product {
         this.bread = bread;
         this.size = size;
         this.toasted = toasted;
+        this.name = size + "\" " + bread + " Sandwich";
     }
+
     public void addMeat(Topping meat) {meats.add(meat);}
     public void addCheese(Topping cheese) {cheeses.add(cheese);}
     public void addRegularTopping(Topping topping) {regularToppings.add(topping);}
@@ -47,9 +49,32 @@ public class Sandwich implements Product {
         return basePrice.add(extras);
 
     }
-    @Override
-    public String getName() {
-        return size + "\" "+ bread + " Sandwich";
+    public String getBread() {
+        return bread;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public boolean isToasted() {
+        return toasted;
+    }
+
+    public List<Topping> getMeats() {
+        return meats;
+    }
+
+    public List<Topping> getCheeses() {
+        return cheeses;
+    }
+
+    public List<Topping> getRegularToppings() {
+        return regularToppings;
+    }
+
+    public List<Topping> getSauces() {
+        return sauces;
     }
 
 

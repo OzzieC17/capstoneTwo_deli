@@ -2,7 +2,7 @@ package com.ps.core;
 
 import java.math.BigDecimal;
 
-public class BagOfChips implements Product{
+public class BagOfChips extends MenuItem{
     private String type;
 
     public BagOfChips(String type) {

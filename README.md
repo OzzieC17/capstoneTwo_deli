@@ -46,6 +46,9 @@ Carreons deli is java constructed program that allows users to interact with sev
 - Custom classes that hold UI color display
 - Visual diagram
 
+
+![Ozzie diagram.png](images/Ozzie%20diagram.png)
+![Greg diagram.png](images/Greg%20diagram.png)
 ## Key notes for code
 - Integrates the 4 pillars of OOP (Encapsulation, abstraction, inheritance and polymorphism)
 
